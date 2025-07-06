@@ -1,0 +1,26 @@
+{
+  "name": "BackTube",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "keywords": [
+    "Backend",
+    "Rahi",
+    "BackTube"
+  ],
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  },
+  "author": "Bisakto-Rahi",
+  "license": "ISC",
+  "description": "This is a Backend Demo Project",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  }
+}

@@ -1,17 +1,12 @@
-import express from "express";
 import connectDB from "./db/db.js";
+import { app } from "./app.js";
 
-const app = express();
+const port = process.env.PORT || 8080;
 
-// Middleware
-app.use(express.json());
-
-// Connect to MongoDB
-connectDB();
-
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+// Y -----{ Connect to MongoDB & start the server }----- Y //
+connectDB()
+  .then(() => {
+    app.listen(port, () => console.log(`🚀 Server running on port http://localhost:${port}`))
+      .on("error", (error) => console.error("❌ Server Error:", error.message));
+  })
+  .catch((error) => console.error("❌ MongoDB Connection Error:", error.message));
